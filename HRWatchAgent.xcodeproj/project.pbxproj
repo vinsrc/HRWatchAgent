@@ -15,6 +15,8 @@
 		724A90A426A7F3870010EC12 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A90A326A7F3870010EC12 /* ComplicationController.swift */; };
 		724A90A626A7F3880010EC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724A90A526A7F3880010EC12 /* Assets.xcassets */; };
 		724A90A926A7F3880010EC12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 724A90A826A7F3880010EC12 /* Preview Assets.xcassets */; };
+		724A90BB26A7F4740010EC12 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A90BA26A7F4740010EC12 /* HealthKit.framework */; };
+		724E66B626A8506B00728477 /* LowHRMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724E66B526A8506B00728477 /* LowHRMonitorService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,9 @@
 		724A90A526A7F3880010EC12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		724A90A826A7F3880010EC12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		724A90AA26A7F3880010EC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		724A90B826A7F4740010EC12 /* HRWatchAgent WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HRWatchAgent WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		724A90BA26A7F4740010EC12 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		724E66B526A8506B00728477 /* LowHRMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowHRMonitorService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724A90BB26A7F4740010EC12 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +96,7 @@
 				724A909226A7F3850010EC12 /* HRWatchAgent WatchKit App */,
 				724A909E26A7F3870010EC12 /* HRWatchAgent WatchKit Extension */,
 				724A908B26A7F3850010EC12 /* Products */,
+				724A90B926A7F4740010EC12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,12 +122,14 @@
 		724A909E26A7F3870010EC12 /* HRWatchAgent WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				724A90B826A7F4740010EC12 /* HRWatchAgent WatchKit Extension.entitlements */,
 				724A909F26A7F3870010EC12 /* ContentView.swift */,
 				724A90A126A7F3870010EC12 /* HRWatchAgentApp.swift */,
 				724A90A326A7F3870010EC12 /* ComplicationController.swift */,
 				724A90A526A7F3880010EC12 /* Assets.xcassets */,
 				724A90AA26A7F3880010EC12 /* Info.plist */,
 				724A90A726A7F3880010EC12 /* Preview Content */,
+				724E66B526A8506B00728477 /* LowHRMonitorService.swift */,
 			);
 			path = "HRWatchAgent WatchKit Extension";
 			sourceTree = "<group>";
@@ -131,6 +140,14 @@
 				724A90A826A7F3880010EC12 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		724A90B926A7F4740010EC12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				724A90BA26A7F4740010EC12 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				724A90A026A7F3870010EC12 /* ContentView.swift in Sources */,
+				724E66B626A8506B00728477 /* LowHRMonitorService.swift in Sources */,
 				724A90A226A7F3870010EC12 /* HRWatchAgentApp.swift in Sources */,
 				724A90A426A7F3870010EC12 /* ComplicationController.swift in Sources */,
 			);
@@ -399,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HRWatchAgent WatchKit Extension/HRWatchAgent WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HRWatchAgent WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = B2Q3CZJSLP;
@@ -423,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HRWatchAgent WatchKit Extension/HRWatchAgent WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HRWatchAgent WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = B2Q3CZJSLP;

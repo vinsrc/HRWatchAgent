@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var service: LowHRMonitorService
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            Text(service.hkStatus)
+                .padding()
+            Text(service.latest)
+                .padding()
+            Text(service.latestTimeStamp)
+                .padding()
+        })
     }
 }
 

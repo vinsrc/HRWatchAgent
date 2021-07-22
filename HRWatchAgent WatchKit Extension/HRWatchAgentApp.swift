@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct HRWatchAgentApp: App {
+    
+    let service = LowHRMonitorService()
+    
+    init(){
+      
+        service.start()
+    }
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView().environmentObject(service)
             }
         }
     }
